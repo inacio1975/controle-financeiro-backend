@@ -32,7 +32,7 @@ else :
 
             if ($check_conv_stmt->rowCount()) :
                 $returnData = ['success' => 1, 'elementos' => $check_conv_stmt->fetchAll(PDO::FETCH_ASSOC)];//msg(1, 302,"Guest Founded", $check_conv_stmt->fetchObject());
-                $responseCode = 302;
+                $responseCode = 200;
             else :
                 $returnData = msg(0, 404, 'Guest not founded');
                 $responseCode = 404;

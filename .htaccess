@@ -4,4 +4,13 @@ RewriteEngine on
 
 # map neat URL to internal URL
 RewriteRule ^registros/$   getRegistros.php [L]
-RewriteRule ^registros$   registros$ [L]
+RewriteRule ^registros$   registros/$ [L,R=301]
+
+RewriteRule ^registros/create/$   newRegistro.php [L]
+RewriteRule ^registros/create$   registros/create/$ [L,R=301]
+
+RewriteRule ^registros/edit/([0-9]+)/$   editRegistro.php?id=$1 [L]
+RewriteRule ^registros/edit/([0-9]+)$   registros/edit/$1/ [L,R=301]
+
+RewriteRule ^registros/delete/$   deleteRegistro.php [L]
+RewriteRule ^registros/delete$   registros/delete/$ [L,R=301]
